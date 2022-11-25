@@ -1,6 +1,5 @@
 const { Client, Partials, Collection } = require("discord.js");
 const User = require("./models/User");
-const keys = require("../qiwi.json")
 
 require("dotenv").config();
 require("colors");
