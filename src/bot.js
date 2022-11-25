@@ -13,7 +13,7 @@ client.commands = new Collection();
 client.colors = { default: 16777215 };
 client.emoji = { success: "✅", danger: "⚠", error: "❌" };
 client.qiwi = { secret: process.env.secret, public: process.env.public };
-client.db = { user: User, guild: Guild };
+client.db = { user: User };
 
 require("./handlers/eventHandler").init(client);
 
