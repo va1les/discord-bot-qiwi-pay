@@ -30,7 +30,7 @@ module.exports = {
                             await i.followUp({ content: `> Оплата прошла **успешно**!\n\nВаш баланс пополнен на ${interaction.options.getNumber("сумма")}`, ephemeral: true });
                             await client.db.user.updateOne({ userid: interaction.user.id }, {
                                 $inc: {
-                                    "balance": interaction.options.getNumber("сумма")
+                                    "balance": +interaction.options.getNumber("сумма")
                                 }
                             })
                             row.components[0].setDisabled(true);
