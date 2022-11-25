@@ -8,9 +8,7 @@ module.exports = {
 
         const cmd = client.commands.get(interaction.commandName)
         if (!cmd) return;
-
-        if (!await client.db.guild.findOne({  })) await client.db.guild.create({  })
-        if (!await client.db.user.findOne({ , userId: interaction.user.id })) await client.db.user.create({ , userId: interaction.user.id })
+        if (!await client.db.user.findOne({ userId: interaction.user.id })) await client.db.user.create({ userId: interaction.user.id })
 
         if (cmd.user_perm && cmd.user_perm.length > 0 && !interaction.member.permissions.has(cmd.user_perm)) {
             return interaction.reply(`> ${client.emoji.error} You don\'t have permissions: \`${cmd.user_perm.join(", ")}\``, true);
