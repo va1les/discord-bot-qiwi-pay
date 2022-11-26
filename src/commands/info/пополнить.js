@@ -28,7 +28,7 @@ module.exports = {
                     qiwiApi.getBillInfo(qiwiSettings.billId).then(async data => {
                         if (data.status.value === "PAID") {
                             await i.followUp({ content: `> Оплата прошла **успешно**!\n\nВаш баланс пополнен на ${interaction.options.getNumber("сумма")}`, ephemeral: true });
-                            await client.db.user.updateOne({ userid: interaction.user.id }, {
+                            await client.db.user.updateOne({ userId: i.user.id }, {
                                 $inc: {
                                     "balance": +interaction.options.getNumber("сумма")
                                 }
