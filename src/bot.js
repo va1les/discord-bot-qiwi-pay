@@ -1,5 +1,6 @@
 const { Client, Partials, Collection } = require("discord.js");
 const User = require("./models/User");
+const Guild = require("./models/Guild");
 
 require("dotenv").config();
 require("colors");
@@ -11,9 +12,9 @@ const client = new Client({
 client.commands_array = [];
 client.commands = new Collection();
 client.colors = { default: 16777215 };
-client.emoji = { success: "✅", danger: "⚠", error: "❌" };
+client.emoji = { success: "<:success:1062266792308912199>", danger: "⚠", error: "<:error:1062274242927923220>" };
 client.qiwi = { secret: process.env.secret, public: process.env.public };
-client.db = { user: User };
+client.db = { user: User, guild: Guild };
 
 require("./handlers/eventHandler").init(client);
 

@@ -18,8 +18,6 @@
 ```Shell
 token=DiscordBotToken
 uri=MongoUri
-secret=QiwiSecret # https://p2p.qiwi.com/
-public=QiwiPublic # https://p2p.qiwi.com/
 ```
 
 ### 📥 Install all modules — `npm install`
@@ -27,7 +25,7 @@ public=QiwiPublic # https://p2p.qiwi.com/
 ### ✅ Launch the Bot — `node .`
 ---
 ```js
-contacts = {
+contacts: {
 telegram: "@va1les_tg",
 discord: "! va1les#8845", // https://discord.com/users/550336142160035840
 }
